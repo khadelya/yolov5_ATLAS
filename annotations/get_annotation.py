@@ -58,7 +58,7 @@ def crop_tif(tif_file_path, json_file_path):
             ymax = train["features"][i]["geometry"]["coordinates"][0][1][1]
             window = (xmin, ymax, xmax, ymin)
             gdal.Translate(
-                f"../data/images/train/output_crop_raster_{i}.tif",
+                f"data/images/train/output_crop_raster_{i}.tif",
                 tif_file_path,
                 projWin=window,
             )
@@ -122,7 +122,7 @@ def convert_annotation(tif_file_path, json_file_path_train, json_file_path_manua
         data = json.load(f)
         features = data["features"]
     for i in range(num_of_files):
-        raster = gdal.Open(f"../data/images/train/output_crop_raster_{i}.tif")
+        raster = gdal.Open(f"data/images/train/output_crop_raster_{i}.tif")
         gt = raster.GetGeoTransform()
         px_size_x = gt[1]
         px_size_y = -gt[5]
@@ -133,7 +133,7 @@ def convert_annotation(tif_file_path, json_file_path_train, json_file_path_manua
         lower_right_x = gt[0] + width * gt[1] + height * gt[2]  # xmax
         lower_right_y = gt[3] + width * gt[4] + height * gt[5]  # ymin
 
-        outfile = open(f"../data/labels/train/output_crop_raster_{i}.txt", "a+")
+        outfile = open(f"data/labels/train/output_crop_raster_{i}.txt", "a+")
 
         for feature in features:
             sum = 0
