@@ -32,7 +32,12 @@ RUN git clone https://github.com/ultralytics/yolov5 /usr/src/yolov5
 
 RUN python -m pip install --upgrade pip
 WORKDIR /usr/src/yolov5
-RUN mkdir -p /usr/src/yolov5/data/images/train /usr/src/yolov5/data/images/val /usr/src/yolov5/data/labels/train /usr/src/yolov5/data/labels/val
+RUN mkdir -p \
+    /usr/src/yolov5/data/images/train \
+    /usr/src/yolov5/data/images/val \
+    /usr/src/yolov5/data/labels/train \
+    /usr/src/yolov5/data/labels/val \
+    /usr/src/yolov5/output_labels
 RUN pip install \
     --no-cache \
     -r requirements.txt \
