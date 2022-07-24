@@ -42,10 +42,10 @@ def convert_normalized_to_pixel_coordinates(tif_width, tif_height, bounding_box)
 
 
 def results_to_json():
-    path_to_labels_detected = "../runs/detect/boat_detected_exp10/labels"
+    path_to_labels_detected = "runs/detect/results_detected_exp/labels"
     files = os.listdir(path=path_to_labels_detected)
     for file in files:
-        path_to_images = "../data/images/train"
+        path_to_images = "data/images/train"
         path_to_file_tif = os.path.join(path_to_images, file.replace("txt", "tif"))
 
         raster = gdal.Open(path_to_file_tif)
@@ -86,7 +86,7 @@ def results_to_json():
                 bbox_px = convert_normalized_to_pixel_coordinates(
                     tif_width, tif_height, bounding_box
                 )
-                feature = px_to_feature(
+                feature = pixel_coordinates_to_feature(
                     bbox_px,
                     (upper_left_x, upper_left_y),
                     (px_size_x_json, px_size_y_json),
