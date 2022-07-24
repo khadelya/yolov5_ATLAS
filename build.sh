@@ -3,7 +3,7 @@
 set -e
 
 currentVersion=$(git rev-parse HEAD)
-baseImage="adelya/yolo"
+baseImage="adelya/object-detection-worker"
 versionTag="${baseImage}:${currentVersion}"
 latesTag="${baseImage}:latest"
 docker build \
