@@ -47,4 +47,6 @@ RUN pip install \
     pyproj \
     --extra-index-url https://download.pytorch.org/whl/cu113
 
-ENTRYPOINT ["python", "/usr/src/yolov5/annotations/get_annotation.py"]
+COPY entrypoint.sh /usr/bin/
+ENTRYPOINT entrypoint.sh
+

@@ -3,10 +3,10 @@ from sklearn.model_selection import train_test_split
 import shutil
 import os
 
-path_to_labels_train = "../data/labels/train"
-path_to_images_train = "../data/images/train"
-path_to_labels_val = "../data/labels/val"
-path_to_images_val = "../data/images/val"
+path_to_labels_train = "data/labels/train"
+path_to_images_train = "data/images/train"
+path_to_labels_val = "data/labels/val"
+path_to_images_val = "data/images/val"
 
 files = os.listdir(path=path_to_labels_train)
 

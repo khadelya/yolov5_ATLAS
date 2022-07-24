@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+set -x
 
 python /usr/src/yolov5/annotations/get_annotation.py
 python /usr/src/yolov5/annotations/divider.py
