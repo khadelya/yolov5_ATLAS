@@ -48,5 +48,3 @@ RUN pip install \
     --extra-index-url https://download.pytorch.org/whl/cu113
 
 ENTRYPOINT ["python", "/usr/src/yolov5/annotations/get_annotation.py"]
-
-WORKDIR /usr/src/app
