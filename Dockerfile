@@ -23,6 +23,7 @@ RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable -y && \
     gdal-bin \
     libproj15 \
     libproj19 \
+    libgl1-mesa-dev \
     libproj-dev
 
 RUN mkdir -p /usr/src/app
