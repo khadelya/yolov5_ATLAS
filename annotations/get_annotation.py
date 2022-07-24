@@ -3,22 +3,22 @@ from osgeo import gdal, osr
 import json
 import os
 
-# """ Read env variable """
-# NOTFOUND = "NOTFOUND"
-# WORKER_CONFIG = os.getenv("WORKER_CONFIG", NOTFOUND)
+""" Read env variable """
+NOTFOUND = "NOTFOUND"
+WORKER_CONFIG = os.getenv("WORKER_CONFIG", NOTFOUND)
 
-# env_ok = True
-# if WORKER_CONFIG == NOTFOUND:
-#     print("WORKER_CONFIG env variable no set")
-#     env_ok = False
+env_ok = True
+if WORKER_CONFIG == NOTFOUND:
+    print("WORKER_CONFIG env variable no set")
+    env_ok = False
 
-# if env_ok:
-#     """Read config"""
-#     with open(WORKER_CONFIG, "r") as config_file:
-#         config_json = json.load(config_file)
-#         tif_file_path = config_json["parameters"]["resource_tif"]
-#         json_file_path_train = config_json["parameters"]["annotations_train"]
-#         json_file_path_manual = config_json["parameters"]["annotations_manual"]
+if env_ok:
+    """Read config"""
+    with open(WORKER_CONFIG, "r") as config_file:
+        config_json = json.load(config_file)
+        tif_file_path = config_json["parameters"]["resource_tif"]
+        json_file_path_train = config_json["parameters"]["annotations_train"]
+        json_file_path_manual = config_json["parameters"]["annotations_manual"]
 
 
 def json_to_new_coordinates(tif_file_path, json_file_path):
@@ -164,14 +164,6 @@ def convert_annotation(tif_file_path, json_file_path_train, json_file_path_manua
 
         outfile.close()
 
-
-tif_file_path = "C:/Users/AKhusnullina/Desktop/input_data/orthophoto.tif"
-json_file_path_train = (
-    "C:/Users/AKhusnullina/Desktop/input_data/boat_ANNOTATIONS_TRAIN.json"
-)
-json_file_path_manual = (
-    "C:/Users/AKhusnullina/Desktop/input_data/boat_ANNOTATIONS_MANUAL.json"
-)
 
 if __name__ == "__main__":
     convert_annotation(tif_file_path, json_file_path_train, json_file_path_manual)
