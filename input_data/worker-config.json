@@ -9,6 +9,7 @@
         "resource_tif": "/input_data/orthophoto.tif",
         "annotations_train": "/input_data/boat_ANNOTATIONS_TRAIN.json",
         "annotations_manual": "/input_data/boat_ANNOTATIONS_MANUAL.json",
-        "result_model": "path_to_save_result_model"
+        "result_model": "path_to_save_result_model",
+        "results_labels_path": "/output_data/labels"
     }
 }

@@ -95,7 +95,9 @@ def results_to_json():
 
             feature_collection = FeatureCollection(features)
 
-            with open(f"{file[:-4]}.json", "w", encoding="utf-8") as f:
+            file_json = file.replace("txt", "json")
+
+            with open(f"output_labels/{file_json}", "w", encoding="utf-8") as f:
                 geojson.dump(feature_collection, f, ensure_ascii=False, indent=2)
 
 
