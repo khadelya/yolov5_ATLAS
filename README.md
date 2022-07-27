@@ -3,7 +3,7 @@
 ## How to build
 Run build script from the root of repository.
 ```bash
-./docker/buiild.sh
+./docker/build.sh
 ```
 
 If everything is ok, you will see messages like this. 
