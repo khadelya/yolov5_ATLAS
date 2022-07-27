@@ -49,6 +49,7 @@ RUN pip install \
     torch \
     torchvision \
     pyproj \
+    geojson \
     --extra-index-url https://download.pytorch.org/whl/cu113
 
 COPY annotations /usr/src/yolov5/annotations
