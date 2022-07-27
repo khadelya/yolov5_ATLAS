@@ -44,8 +44,9 @@ def convert_normalized_to_pixel_coordinates(tif_width, tif_height, bounding_box)
 def results_to_json():
     path_to_labels_detected = "runs/detect/results_detected_exp/labels"
     files = os.listdir(path=path_to_labels_detected)
+    features = []
     for file in files:
-        path_to_images = "data/images/train"
+        path_to_images = "data/temp"
         path_to_file_tif = os.path.join(path_to_images, file.replace("txt", "tif"))
 
         raster = gdal.Open(path_to_file_tif)
@@ -77,8 +78,6 @@ def results_to_json():
 
         path_to_file_txt = os.path.join(path_to_labels_detected, file)
 
-        features = []
-
         with open(path_to_file_txt, "r") as f:
             for line in f:
                 bounding_box = line[2:].split()
@@ -95,10 +94,8 @@ def results_to_json():
 
             feature_collection = FeatureCollection(features)
 
-            file_json = file.replace("txt", "json")
-
-            with open(f"output_labels/{file_json}", "w", encoding="utf-8") as f:
-                geojson.dump(feature_collection, f, ensure_ascii=False, indent=2)
+    with open("output_data/ANNOTATIONS_GENERATED.json", "w", encoding="utf-8") as f:
+        geojson.dump(feature_collection, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
