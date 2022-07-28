@@ -36,4 +36,6 @@ If yolov5 training gets killed at the first epoch add the following flag to the 
 ```bash
 --batch-size 5
 ```
-
+## Expected results
+In the output_data directory should be the following file :
+- ANNOTATIONS_GENERATED.json
