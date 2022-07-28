@@ -22,20 +22,14 @@ Successfully tagged adelya/object-detection-worker:2dfbfdd0db44206cea0b588119d58
 Successfully tagged adelya/object-detection-worker:latest
 ```
 
-List of available versions.
-```bash
-docker image ls
-```
+
 
 To run the image inside of a container:
 ```bash
 ./run.sh
 ```
 
-If yolov5 training gets killed at the first epoch add the following flag to the training command in entrypoint.sh :
-```bash
---batch-size 5
-```
+
 ## Expected results
 In the output_data directory should be the following file :
 - ANNOTATIONS_GENERATED.json
