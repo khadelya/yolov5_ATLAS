@@ -14,4 +14,4 @@ docker run \
 	--mount type=bind,source="${outputDir}",target="/output_data" \
 	-e WORKER_CONFIG="/input_data/worker-config.json" \
 	"adelya/object-detection-worker:latest" \
-	bash
+	-t nvidia/cuda
