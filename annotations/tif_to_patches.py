@@ -32,7 +32,7 @@ def tif_to_patches(tif_file_path):
         for x in range(0, tif_width, XSIZE):
             window = (x, y, XSIZE, YSIZE)
             gdal.Translate(
-                f"data/temp/detect/crop_tif_{i}.tif",
+                f"data/temp/crop_tif_{i}.tif",
                 tif_file_path,
                 srcWin=window,
             )
