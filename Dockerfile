@@ -55,10 +55,3 @@ COPY annotations /usr/src/yolov5/annotations
 
 COPY entrypoint.sh /usr/bin/
 ENTRYPOINT entrypoint.sh
-
-# RUN distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-#     curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
-#     curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-RUN sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit \
-    sudo systemctl restart docker 
-    
