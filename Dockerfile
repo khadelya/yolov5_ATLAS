@@ -36,8 +36,7 @@ RUN mkdir -p \
     /usr/src/yolov5/data/images/train \
     /usr/src/yolov5/data/images/val \
     /usr/src/yolov5/data/labels/train \
-    /usr/src/yolov5/data/labels/val \
-    /usr/src/yolov5/output_labels
+    /usr/src/yolov5/data/labels/val
 RUN pip install \
     --no-cache \
     -r requirements.txt \
