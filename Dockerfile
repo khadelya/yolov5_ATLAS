@@ -32,7 +32,13 @@ RUN git clone https://github.com/ultralytics/yolov5 /usr/src/yolov5
 
 RUN python -m pip install --upgrade pip
 WORKDIR /usr/src/yolov5
-
+RUN mkdir -p \
+    /usr/src/yolov5/data/images/train \
+    /usr/src/yolov5/data/images/val \
+    /usr/src/yolov5/data/labels/train \
+    /usr/src/yolov5/data/labels/val \
+    /usr/src/yolov5/runs/train/exp \
+    /usr/src/yolov5/runs/detect/results_detected_exp
 RUN pip install \
     --no-cache \
     -r requirements.txt \
@@ -47,15 +53,7 @@ RUN pip install \
     geojson \
     --extra-index-url https://download.pytorch.org/whl/cu113
     
-RUN mkdir -p \
-    /usr/src/yolov5/data/images/train \
-    /usr/src/yolov5/data/images/val \
-    /usr/src/yolov5/data/labels/train \
-    /usr/src/yolov5/data/labels/val \
-    /usr/src/yolov5/runs/train/exp \
-    /usr/src/yolov5/runs/detect/results_detected_exp
-
 COPY annotations /usr/src/yolov5/annotations
 
 COPY entrypoint.sh /usr/bin/
-#ENTRYPOINT entrypoint.sh
+ENTRYPOINT entrypoint.sh
