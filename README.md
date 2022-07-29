@@ -3,7 +3,7 @@
 Running yolov5 training and inference on geospatial data in a docker container.
 
 ## Input data
-Place the following files in the input_data directory:
+Place the following files in the input_data directory :
 - orthophoto.tif
 - boat_ANNOTATIONS_TRAIN.json
 - boat_ANNOTATIONS_MANUAL.json
@@ -24,12 +24,12 @@ Successfully tagged adelya/object-detection-worker:latest
 
 
 
-To run the image inside of a container:
+To run the image inside of a container :
 ```bash
 ./run.sh
 ```
 
 
 ## Expected results
-In the output_data directory should be the following file :
+In the runs/detect/results_detected_exp directory should be the following file :
 - ANNOTATIONS_GENERATED.json
