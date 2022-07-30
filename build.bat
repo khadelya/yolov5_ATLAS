@@ -1,1 +1,0 @@
-docker build -t adelya/object-detection-worker .
