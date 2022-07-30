@@ -94,7 +94,7 @@ def results_to_json():
 
             feature_collection = FeatureCollection(features)
 
-    with open("runs/detect/results_detected_exp/ANNOTATIONS_GENERATED.json", "w", encoding="utf-8") as f:
+    with open("output_data/ANNOTATIONS_GENERATED.json", "w", encoding="utf-8") as f:
         geojson.dump(feature_collection, f, ensure_ascii=False, indent=2)
 
 
