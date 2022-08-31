@@ -1,6 +1,6 @@
 # Dockerization of YOLOv5
 
-Running yolov5 training and inference on geospatial data in a docker container.
+Running YOLOv5 training and inference on aerial images in a certain map projection (orthophoto) labelled via GeoJSON (in WGS84 Coordinate System) inside of a docker container. As a result, you get a trained model and another GeoJSON file containing all the instances found by YOLOv5 (WGS84 Coordinate System).
 
 ## Dataset
 - Images per class. ≥1.5k images per class
@@ -12,9 +12,9 @@ Running yolov5 training and inference on geospatial data in a docker container.
 
 ## Input data
 Place the following files in the input_data directory :
-- *.tif
-- *_ANNOTATIONS_TRAIN.json
-- *_ANNOTATIONS_MANUAL.json
+- *.tif - orthophoto (image for training and inference containing instances of the object to be detected)/
+- *_ANNOTATIONS_TRAIN.json - GeoJSON file containing areas in which objects are labelled.
+- *_ANNOTATIONS_MANUAL.json - GeoJSON file containing labels of objects to be detected (with Polygons).
 
 Check whether *_ANNOTATIONS_MANUAL.json is tagged with Polygons (otherwise it won't work).
 
@@ -44,5 +44,5 @@ To run the image inside of a container :
 
 ## Expected results
 In the output_data directory should be the following files :
-- ANNOTATIONS_GENERATED.json
+- ANNOTATIONS_GENERATED.json - GeoJSON file containing inference results in WGS84 Coordinate System.
 - runs (which contains training results)
