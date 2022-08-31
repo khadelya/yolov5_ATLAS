@@ -45,5 +45,5 @@ To run the image inside of a container :
 
 ## Expected results
 In the output_data directory should be the following files :
-- ANNOTATIONS_GENERATED.json - GeoJSON file containing inference results in WGS84 Coordinate System.
+- ANNOTATIONS_GENERATED.json - GeoJSON file containing inference results (detected objects) in WGS84 Coordinate System.
 - runs (which contains training results)
