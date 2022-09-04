@@ -1,15 +1,10 @@
-# Dockerization of YOLOv5
+# YOLOv5 detection and inference on aerial images as a service
 
 Running YOLOv5 training and inference on aerial images in a certain map projection (orthophoto) labelled via GeoJSON (in WGS84 Coordinate System) inside of a docker container. 
 As a result, you get a trained model and another GeoJSON file containing all the instances found by YOLOv5 (WGS84 Coordinate System).
 
 ## Dataset
-- Images per class. ≥1.5k images per class
-- Instances per class. ≥10k instances (labeled objects) per class total
-- Image variety. Must be representative of deployed environment. For real-world use cases we recommend images from different times of day, different seasons, different weather, different lighting, different angles, different sources (scraped online, collected locally, different cameras) etc.
-- Label consistency. All instances of all classes in all images must be labelled. Partial labelling will not work.
-- Label accuracy. Labels must closely enclose each object. No space should exist between an object and it's bounding box. No objects should be missing a label.
-- Background images. Background images are images with no objects that are added to a dataset to reduce False Positives (FP). We recommend about 0-10% background images to help reduce FPs (COCO has 1000 background images for reference, 1% of the total).
+Tips for best training results according to YOLOv5 [documentation](https://docs.ultralytics.com/tutorials/training-tips-best-results/).
 
 ## Input data
 Place the following files in the input_data directory :
