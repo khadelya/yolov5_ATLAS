@@ -1,6 +1,6 @@
 # YOLOv5 detection and inference on aerial images as a service
 
-Running YOLOv5 training and inference on aerial images in a certain map projection (orthophoto) labelled via GeoJSON (in WGS84 Coordinate System) inside of a docker container. 
+Running YOLOv5 training and inference on aerial images (orthophoto) labelled via GeoJSON (in WGS84 Coordinate System) inside of a docker container. 
 As a result, you get a trained model and another GeoJSON file containing all the instances found by YOLOv5 (WGS84 Coordinate System).
 
 ## Dataset
